@@ -38,53 +38,111 @@ async function draw(){
     textSize(15);
     textAlign(CENTER, CENTER);
 
+  var IHWx1 = data["IHW"]["data"][0][0];
+  var IHWx2 = data["IHW"]["data"][0][1];
+  var IHWx3 = data["IHW"]["data"][0][2];
+  var IHWy1 = data["IHW"]["data"][1][0];
+  var IHWy2 = data["IHW"]["data"][1][1];
+  var IHWy3 = data["IHW"]["data"][1][2];
+  var IHWz1 = data["IHW"]["data"][2][0];
+  var IHWz2 = data["IHW"]["data"][2][1];
+  var IHWz3 = data["IHW"]["data"][2][2];
+//console.log(IHWx3);
+  textSize(10);
+  let r2 = 255;
+  fill(r2,IHWx1*255,0);
+  rect(130,95, 140, 10); //top top
+  
+  
+  fill(r2,IHWx2*255,0);
+  rotate(0.55);
+  rect(160,15, 180, 10); //top mid
+  rotate(-0.55);
+  
+  fill(r2,IHWx3*255,0);
+  rotate(0.89);
+  rect(160,-35, 235, 10); //top low
+  rotate(-0.89);
+  
+  fill(r2,IHWy2*255,0);
+  rect(130,195, 140, 10); //mid mid
+  
+  fill(r2,IHWy1*255,0);
+  rotate(-0.55);
+  rect(0,230, 180, 10); //mid top
+  rotate(0.55);
+
+  fill(r2,IHWy3*255,0);
+  rotate(0.55);
+  rect(210,105, 180, 10); //mid low
+  rotate(-0.55);
+  
+  fill(r2,IHWz3*255,0);
+  rect(130,295, 140, 10); //low low
+  
+  fill(r2,IHWz2*255,0);
+  rotate(-0.55);
+  rect(-50,310, 180, 10); //low mid
+  rotate(0.55);
+  
+  fill(r2,IHWz1*255,0);
+  rotate(-0.89);
+  rect(-170,280, 255, 10); // low top
+  rotate(0.89);
+  textSize(16);
   var i1 = data["inputs"][0];
   var i2 = data["inputs"][1];
   var i3 = data["inputs"][2];
   fill(r,0,i1*255);
-  rect(130,95, 140, 10); //top top
-  rotate(0.55);
-  rect(160,15, 180, 10); //top mid
-  rotate(-0.55);
-  rotate(0.89);
-  rect(160,-35, 235, 10); //top low
-  rotate(-0.89);
-  rect(130,195, 140, 10); //mid mid
-  rotate(-0.55);
-  rect(0,230, 180, 10); //mid top
-  rotate(0.55);
-  rotate(0.55);
-  rect(210,105, 180, 10); //mid low
-  rotate(-0.55);
-  rect(130,295, 140, 10); //low low
-  rotate(-0.55);
-  rect(-50,310, 180, 10); //mid top
-  rotate(0.55);
-  rotate(-0.89);
-  rect(-170,280, 255, 10); // low top
-  rotate(0.89);
-
-
 
   ellipse(100,100,60);
-  if(overCircle(100,100,60)){
-    fill(225);
+  if(overCircle(100,100,60)){ // mouse over top input node
+    fill(0);
+    textSize(10);
+    text(IHWx1.toString().substring(0,5), 180,101);
+    rotate(0.55);
+    text(IHWx2.toString().substring(0,5), 220,20);
+    rotate(-0.55);
+    rotate(0.89);
+    text(IHWx3.toString().substring(0,5), 210,-30);
+    rotate(-0.89);
+
   }
+  textSize(16);
   text(i1.toString().substring(0,5), 100,100);
   fill(r,0,i2*255);
   ellipse(100,200,60);
 
-  if(overCircle(100,200,60)){
-    fill(225);
+  if(overCircle(100,200,60)){ //mouse over mid node
+    fill(0);
+    textSize(10);
+    text(IHWy2.toString().substring(0,5), 180,201);
+    rotate(0.55);
+    text(IHWy3.toString().substring(0,5), 260,110);
+    rotate(-0.55);
+    rotate(-0.55);
+    text(IHWy1.toString().substring(0,5), 60,236);
+    rotate(0.55);
   }
-  
+  textSize(16);
   text(i2.toString().substring(0,5), 100,200);
   fill(r,0,i3*255);
   ellipse(100,300,60);
 
-  if(overCircle(100,300,60)){
-    fill(225);
+  if(overCircle(100,300,60)){ //if mouse over low node
+    fill(0);
+    textSize(10);
+    text(IHWz3.toString().substring(0,5), 180,301);
+    rotate(-0.55);
+    text(IHWz2.toString().substring(0,5), 30,316);
+    rotate(0.55);
+    rotate(-0.89);
+    text(IHWz1.toString().substring(0,5), -70,286);
+    rotate(0.89);
+
+
   }
+  textSize(16);
   text(i3.toString().substring(0,5), 100,300);
   
 
