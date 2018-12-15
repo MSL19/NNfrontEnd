@@ -16,7 +16,7 @@ console.log(mainData);*/
 let data;
 let ready = false;
 async function setup(){
-  createCanvas(1500,400);
+  createCanvas(1920,400);
 
   background(50);
 }
@@ -38,58 +38,83 @@ async function draw(){
     textSize(15);
     textAlign(CENTER, CENTER);
 
-  var IHWx1 = data["IHW"]["data"][0][0];
-  var IHWx2 = data["IHW"]["data"][0][1];
-  var IHWx3 = data["IHW"]["data"][0][2];
-  var IHWy1 = data["IHW"]["data"][1][0];
-  var IHWy2 = data["IHW"]["data"][1][1];
-  var IHWy3 = data["IHW"]["data"][1][2];
-  var IHWz1 = data["IHW"]["data"][2][0];
-  var IHWz2 = data["IHW"]["data"][2][1];
-  var IHWz3 = data["IHW"]["data"][2][2];
+  let IHWx1 = data["IHW"]["data"][0][0];
+  let IHWx2 = data["IHW"]["data"][0][1];
+  let IHWx3 = data["IHW"]["data"][0][2];
+  let IHWy1 = data["IHW"]["data"][1][0];
+  let IHWy2 = data["IHW"]["data"][1][1];
+  let IHWy3 = data["IHW"]["data"][1][2];
+  let IHWz1 = data["IHW"]["data"][2][0];
+  let IHWz2 = data["IHW"]["data"][2][1];
+  let IHWz3 = data["IHW"]["data"][2][2];
+
+  let BH1 = data["BH"]["data"][0];
+  let BH2 = data["BH"]["data"][1];
+  let BH3 = data["BH"]["data"][2];
+
 //console.log(IHWx3);
   textSize(10);
   let r2 = 255;
-  fill(r2,IHWx1*255,0);
+  fill(r2,IHWx1*255,255);
   rect(130,95, 140, 10); //top top
   
   
-  fill(r2,IHWx2*255,0);
+  fill(r2,IHWx2*255,255);
   rotate(0.55);
   rect(160,15, 180, 10); //top mid
   rotate(-0.55);
   
-  fill(r2,IHWx3*255,0);
+  fill(r2,IHWx3*255,255);
   rotate(0.89);
   rect(160,-35, 235, 10); //top low
   rotate(-0.89);
   
-  fill(r2,IHWy2*255,0);
+  fill(r2,IHWy2*255,255);
   rect(130,195, 140, 10); //mid mid
   
-  fill(r2,IHWy1*255,0);
+  fill(r2,IHWy1*255,255);
   rotate(-0.55);
   rect(0,230, 180, 10); //mid top
   rotate(0.55);
 
-  fill(r2,IHWy3*255,0);
+  fill(r2,IHWy3*255,255);
   rotate(0.55);
   rect(210,105, 180, 10); //mid low
   rotate(-0.55);
   
-  fill(r2,IHWz3*255,0);
+  fill(r2,IHWz3*255,255);
   rect(130,295, 140, 10); //low low
   
-  fill(r2,IHWz2*255,0);
+  fill(r2,IHWz2*255,255);
   rotate(-0.55);
   rect(-50,310, 180, 10); //low mid
   rotate(0.55);
   
-  fill(r2,IHWz1*255,0);
+  fill(r2,IHWz1*255,255);
   rotate(-0.89);
   rect(-170,280, 255, 10); // low top
   rotate(0.89);
   textSize(16);
+
+  fill(r2,IHWz3*255,255);
+  rect(130,295, 140, 10); //low low
+  
+
+  fill(r2,BH3*255,255);
+  rect(330,295, 140, 10); //low low
+fill(r2,BH2*255,255);
+  rect(330,195, 140, 10); //low low
+    fill(r2,BH1*255,255);
+  rect(330,95, 140, 10); //low low
+    
+
+  fill(r2,255,255);
+  rect(530,295, 140, 10); //low low
+fill(r2,255,255);
+  rect(530,195, 140, 10); //low low
+    fill(r2,255,255);
+  rect(530,95, 140, 10); //low low
+
   var i1 = data["inputs"][0];
   var i2 = data["inputs"][1];
   var i3 = data["inputs"][2];
@@ -146,48 +171,111 @@ async function draw(){
   text(i3.toString().substring(0,5), 100,300);
   
 
-  var h1 = data["hidden"][0];
-  var h2 = data["hidden"][1];
-  var h3 = data["hidden"][2];
-  fill(r,0,h1*255);
+  var h1 = data["hiddenRaw"][0];
+  var h2 = data["hiddenRaw"][1];
+  var h3 = data["hiddenRaw"][2];
+  fill(r,0,Math.abs(h1*255));
   ellipse(300,100,60);
   if(overCircle(300,100,60)){
-    fill(225);
+    fill(0);
+    textSize(10);
+    text(BH1.toString().substring(0,5), 360,101);
+
   }
+  textSize(16);
   text(h1.toString().substring(0,5), 300,100);
-  fill(r,0,h2*255);
+  fill(r,0,Math.abs(h2*255));
   ellipse(300,200,60);
 
   if(overCircle(300,200,60)){
-    fill(225);
+    fill(0);
+    textSize(10);
+    text(BH2.toString().substring(0,5), 360,201);
+
   }
-  
+  textSize(16);
   text(h2.toString().substring(0,5), 300,200);
-  fill(r,0,h3*255);
+  fill(r,0,Math.abs(h3*255));
   ellipse(300,300,60);
 
   if(overCircle(300,300,60)){
-    fill(225);
+    fill(0);
+    textSize(10);
+    text(BH3.toString().substring(0,5), 360,301);
+
   }
+  textSize(16);
   text(h3.toString().substring(0,5), 300,300);
-  var o1 = data["outputs"][0];
-  var o2 = data["outputs"][1];
-   
-
-  fill(r,0,o1*255);
-  ellipse(500,150,60);
-  if(overCircle(500,150,60)){
-    fill(225);
+  
+  
+  var hB1 = data["hiddenB"][0];
+  var hB2 = data["hiddenB"][1];
+  var hB3 = data["hiddenB"][2];
+  fill(r,0,Math.abs(hB1*255));
+  ellipse(500,100,60);
+  if(overCircle(500,100,60)){ //mouse over hidden top hidden node
+    fill(0);
   }
-  text(o1.toString().substring(0,5), 500,150);
-  fill(r,0,o2*255);
-  ellipse(500,250,60);
+  text(hB1.toString().substring(0,5), 500,100);
+  fill(r,0,Math.abs(hB2*255));
+  ellipse(500,200,60);
 
-  if(overCircle(500,250,60)){
-    fill(225);
+  if(overCircle(500,200,60)){
+    fill(0);
   }
   
-  text(o2.toString().substring(0,5), 500,250);
+  text(hB2.toString().substring(0,5), 500,200);
+  fill(r,0,Math.abs(hB3*255));
+  ellipse(500,300,60);
+
+  if(overCircle(500,300,60)){
+    fill(0);
+  }
+  text(hB3.toString().substring(0,5), 500,300);
+  
+  
+  var hF1 = data["hidden"][0];
+  var hF2 = data["hidden"][1];
+  var hF3 = data["hidden"][2];
+  fill(r,0,Math.abs(hF1*255));
+  ellipse(700,100,60);
+  if(overCircle(700,100,60)){ //mouse over hidden top hidden node
+    fill(0);
+  }
+  text(hF1.toString().substring(0,5), 700,100);
+  fill(r,0,Math.abs(hF2*255));
+  ellipse(700,200,60);
+
+  if(overCircle(700,200,60)){
+    fill(0);
+  }
+  
+  text(hF2.toString().substring(0,5), 700,200);
+  fill(r,0,Math.abs(hF3*255));
+  ellipse(700,300,60);
+
+  if(overCircle(700,300,60)){
+    fill(0);
+  }
+  text(hF3.toString().substring(0,5), 700,300);
+
+  var oR1 = data["outputsRaw"][0];
+  var oR2 = data["outputsRaw"][1];
+   
+
+  fill(r,0,Math.abs(oR1)*255);
+  ellipse(900,150,60);
+  if(overCircle(900,150,60)){
+    fill(0);
+  }
+  text(oR1.toString().substring(0,5), 900,150);
+  fill(r,0,Math.abs(oR2)*255);
+  ellipse(900,250,60);
+
+  if(overCircle(900,250,60)){
+    fill(0);
+  }
+  text(oR2.toString().substring(0,5), 900,250);
   
   
   }
