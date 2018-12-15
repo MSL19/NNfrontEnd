@@ -52,6 +52,14 @@ async function draw(){
   let BH2 = data["BH"]["data"][1];
   let BH3 = data["BH"]["data"][2];
 
+  let HOWx1 = data["HOW"]["data"][0][0];
+  let HOWx2 = data["HOW"]["data"][0][1];
+  let HOWx3 = data["HOW"]["data"][0][2];
+  let HOWy1 = data["HOW"]["data"][1][0];
+  let HOWy2 = data["HOW"]["data"][1][1];
+  let HOWy3 = data["HOW"]["data"][1][2];
+
+
 //console.log(IHWx3);
   textSize(10);
   let r2 = 255;
@@ -114,6 +122,11 @@ fill(r2,255,255);
   rect(530,195, 140, 10); //low low
     fill(r2,255,255);
   rect(530,95, 140, 10); //low low
+  
+  rotate(0.3);
+  fill(r2,HOWx1*255,255);
+  rect(720,-125, 170, 10); //low low
+  rotate(-0.3);
 
   var i1 = data["inputs"][0];
   var i2 = data["inputs"][1];
