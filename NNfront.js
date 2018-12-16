@@ -17,7 +17,7 @@ let data;
 let ready = false;
 async function setup(){
   pixelDensity(5);
-  createCanvas(1200,400);
+  createCanvas(1600,400);
 
   background(50);
 }
@@ -60,7 +60,8 @@ async function draw(){
   let HOWy2 = data["HOW"]["data"][1][1];
   let HOWy3 = data["HOW"]["data"][1][2];
 
-
+  let BO1 = data["BO"]["data"][0];
+  let BO2 = data["BO"]["data"][1];
 //console.log(IHWx3);
   textSize(10);
   let r2 = 90;
@@ -153,6 +154,12 @@ fill(r2,255,255);
   fill(r2,HOWy3*255,255);
   rect(340,697, 220, 10); //low low
   rotate(0.73);
+
+  fill(r2,BO1*255,255);
+  rect(930,145, 140, 10); //low low
+
+  fill(r2,BO2*255,255);
+  rect(930,245, 140, 10); //low low
 
   var i1 = data["inputs"][0];
   var i2 = data["inputs"][1];
@@ -333,15 +340,61 @@ fill(r2,255,255);
   ellipse(900,150,60);
   if(overCircle(900,150,60)){
     fill(0);
+    textSize(10);
+    text(BO1.toString().substring(0,5), 960,150);
+
   }
+  textSize(16);
   text(oR1.toString().substring(0,5), 900,150);
   fill(r,0,Math.abs(oR2)*255);
   ellipse(900,250,60);
 
   if(overCircle(900,250,60)){
     fill(0);
+    textSize(10);
+    text(BO2.toString().substring(0,5), 960,250);
+
   }
+  textSize(16);
   text(oR2.toString().substring(0,5), 900,250);
+  
+  var oB1 = data["outputsB"][0];
+  var oB2 = data["outputsB"][1];
+   
+
+  fill(r,0,Math.abs(oB1)*255);
+  ellipse(1100,150,60);
+  if(overCircle(1100,150,60)){
+    fill(0);
+    
+  }
+  text(oB1.toString().substring(0,5), 1100,150);
+  fill(r,0,Math.abs(oB2)*255);
+  ellipse(1100,250,60);
+
+  if(overCircle(1100,250,60)){
+    fill(0);
+  }
+  text(oB2.toString().substring(0,5), 1100,250);
+  
+  var o1 = data["outputs"][0];
+  var o2 = data["outputs"][1];
+   
+
+  fill(r,0,Math.abs(o1)*255);
+  ellipse(1300,150,60);
+  if(overCircle(1300,150,60)){
+    fill(0);
+    
+  }
+  text(o1.toString().substring(0,5), 1300,150);
+  fill(r,0,Math.abs(o2)*255);
+  ellipse(1300,250,60);
+
+  if(overCircle(1300,250,60)){
+    fill(0);
+  }
+  text(o2.toString().substring(0,5), 1300,250);
   
   
   }
