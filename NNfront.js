@@ -34,7 +34,7 @@ function overCircle(x,y,diameter) {
 
 async function draw(){
   if(ready) {
-    let r = 190;
+    let r = 255;
 
     noStroke();
     textSize(15);
@@ -65,7 +65,7 @@ async function draw(){
   let BO2 = data["BO"]["data"][1];
 //console.log(IHWx3);
   textSize(10);
-  let r2 = 90;
+  let r2 = 250;
   fill(r2,IHWx1*255,255);
   rect(130,95, 140, 10); //top top
   
