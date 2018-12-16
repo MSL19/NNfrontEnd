@@ -70,12 +70,12 @@ async function draw(){
   rect(130,95, 140, 10); //top top
   
   
-  fill(r2,IHWx2*255,255);
+  fill(r2,IHWy1*255,255);
   rotate(0.55);
   rect(160,15, 180, 10); //top mid
   rotate(-0.55);
   
-  fill(r2,IHWx3*255,255);
+  fill(r2,IHWz1*255,255);
   rotate(0.89);
   rect(160,-35, 235, 10); //top low
   rotate(-0.89);
@@ -83,12 +83,12 @@ async function draw(){
   fill(r2,IHWy2*255,255);
   rect(130,195, 140, 10); //mid mid
   
-  fill(r2,IHWy1*255,255);
+  fill(r2,IHWx2*255,255);
   rotate(-0.55);
   rect(0,230, 180, 10); //mid top
   rotate(0.55);
 
-  fill(r2,IHWy3*255,255);
+  fill(r2,IHWz2*255,255);
   rotate(0.55);
   rect(210,105, 180, 10); //mid low
   rotate(-0.55);
@@ -96,12 +96,12 @@ async function draw(){
   fill(r2,IHWz3*255,255);
   rect(130,295, 140, 10); //low low
   
-  fill(r2,IHWz2*255,255);
+  fill(r2,IHWy2*255,255);
   rotate(-0.55);
   rect(-50,310, 180, 10); //low mid
   rotate(0.55);
   
-  fill(r2,IHWz1*255,255);
+  fill(r2,IHWx3*255,255);
   rotate(-0.89);
   rect(-170,280, 255, 10); // low top
   rotate(0.89);
@@ -194,10 +194,10 @@ fill(r2,255,255);
     textSize(10);
     text(IHWx1.toString().substring(0,5), 180,101);
     rotate(0.55);
-    text(IHWx2.toString().substring(0,5), 220,20);
+    text(IHWy1.toString().substring(0,5), 220,20);
     rotate(-0.55);
     rotate(0.89);
-    text(IHWx3.toString().substring(0,5), 210,-30);
+    text(IHWz1.toString().substring(0,5), 210,-30);
     rotate(-0.89);
     //textSize(20);
     //fill(230);
@@ -211,12 +211,12 @@ fill(r2,255,255);
   if(overCircle(100,200,60)){ //mouse over mid node
     fill(0);
     textSize(10);
-    text(IHWy2.toString().substring(0,5), 180,201);
+    text(IHWy2.toString().substring(0,5), 170,201);
     rotate(0.55);
-    text(IHWy3.toString().substring(0,5), 260,110);
+    text(IHWz2.toString().substring(0,5), 250,110);
     rotate(-0.55);
     rotate(-0.55);
-    text(IHWy1.toString().substring(0,5), 60,236);
+    text(IHWx2.toString().substring(0,5), 50,236);
     rotate(0.55);
   }
   textSize(16);
@@ -229,10 +229,10 @@ fill(r2,255,255);
     textSize(10);
     text(IHWz3.toString().substring(0,5), 180,301);
     rotate(-0.55);
-    text(IHWz2.toString().substring(0,5), 30,316);
+    text(IHWy3.toString().substring(0,5), 30,316);
     rotate(0.55);
     rotate(-0.89);
-    text(IHWz1.toString().substring(0,5), -70,286);
+    text(IHWx3.toString().substring(0,5), -70,286);
     rotate(0.89);
 
 
