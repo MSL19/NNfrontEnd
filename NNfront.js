@@ -17,7 +17,8 @@ let data;
 let ready = false;
 async function setup(){
   pixelDensity(5);
-  createCanvas(1600,400);
+  //fullScreen();
+  createCanvas(1500,400);
 
   background(50);
 }
@@ -161,9 +162,30 @@ fill(r2,255,255);
   fill(r2,BO2*255,255);
   rect(930,245, 140, 10); //low low
 
+  fill(r2,255,255);
+  rect(1130,145, 140, 10); //low low
+  rect(1130,245, 140, 10); //low low
+
   var i1 = data["inputs"][0];
   var i2 = data["inputs"][1];
   var i3 = data["inputs"][2];
+  fill(230);
+  text("[INPUT NODES]", 100,50);
+  text("[INPUT WEIGHTS]", 200,80);
+
+  text("[HIDDEN NODES]", 300,50);
+  text("[HIDDEN BIASES]", 400,80);
+
+  text("[SIGMOID FN]", 600,80);
+  rotate(0.30);
+  text("[HIDDEN WEIGHTS]", 795,-145);
+  rotate(-0.30);
+  text("[OUTPUT BIASES]", 1000,130);
+
+  text("[SIGMOID FN]", 1200,130);
+  text("[OUTPUT NODES]", 1300,100);
+
+
   fill(r,0,i1*255);
 
   ellipse(100,100,60);
@@ -177,6 +199,8 @@ fill(r2,255,255);
     rotate(0.89);
     text(IHWx3.toString().substring(0,5), 210,-30);
     rotate(-0.89);
+    //textSize(20);
+    //fill(230);
 
   }
   textSize(16);
@@ -386,6 +410,7 @@ fill(r2,255,255);
   if(overCircle(1300,150,60)){
     fill(0);
     
+    
   }
   text(o1.toString().substring(0,5), 1300,150);
   fill(r,0,Math.abs(o2)*255);
@@ -412,8 +437,3 @@ async function setData(){
   data = await getData();
 }
 setInterval(setData, 1000);
-/*async function onLoad() {
-  let data = await getData();
-}
-*/
-//window.onload = onLoad;
