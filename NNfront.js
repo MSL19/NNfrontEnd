@@ -16,7 +16,8 @@ console.log(mainData);*/
 let data;
 let ready = false;
 async function setup(){
-  createCanvas(1920,400);
+  pixelDensity(5);
+  createCanvas(1200,400);
 
   background(50);
 }
@@ -62,7 +63,7 @@ async function draw(){
 
 //console.log(IHWx3);
   textSize(10);
-  let r2 = 255;
+  let r2 = 90;
   fill(r2,IHWx1*255,255);
   rect(130,95, 140, 10); //top top
   
@@ -127,6 +128,31 @@ fill(r2,255,255);
   fill(r2,HOWx1*255,255);
   rect(720,-125, 170, 10); //low low
   rotate(-0.3);
+
+  rotate(0.73);
+  fill(r2,HOWy1*255,255);
+  rect(610,-405, 220, 10); //low low
+  rotate(-0.73);
+
+  rotate(-0.3);
+  fill(r2,HOWx2*255,255);
+  rect(600,400, 200, 10); //low low
+  rotate(0.3);
+
+  rotate(0.3);
+  fill(r2,HOWy2*255,255);
+  rect(720,-20, 200, 10); //low low
+  rotate(-0.3);
+
+  rotate(-0.3);
+  fill(r2,HOWx3*255,255);
+  rect(600,500, 170, 10); //low low
+  rotate(0.3);
+
+  rotate(-0.73);
+  fill(r2,HOWy3*255,255);
+  rect(340,697, 220, 10); //low low
+  rotate(0.73);
 
   var i1 = data["inputs"][0];
   var i2 = data["inputs"][1];
@@ -254,22 +280,49 @@ fill(r2,255,255);
   ellipse(700,100,60);
   if(overCircle(700,100,60)){ //mouse over hidden top hidden node
     fill(0);
+    rotate(0.3);
+    textSize(10);
+    text(HOWx1.toString().substring(0,5), 750,-119);
+    rotate(-0.3);
+    rotate(0.73);
+    text(HOWy1.toString().substring(0,5), 640,-400);
+    rotate(-0.73);
+
   }
+  textSize(16)
   text(hF1.toString().substring(0,5), 700,100);
   fill(r,0,Math.abs(hF2*255));
   ellipse(700,200,60);
 
   if(overCircle(700,200,60)){
     fill(0);
-  }
+    rotate(-0.3);
+    textSize(10);
+    text(HOWx2.toString().substring(0,5), 660,405);
+    rotate(0.3);
+    rotate(0.3);
+    text(HOWy2.toString().substring(0,5), 780,-15);
+    rotate(-0.3);
   
+  }
+  textSize(16);
   text(hF2.toString().substring(0,5), 700,200);
   fill(r,0,Math.abs(hF3*255));
   ellipse(700,300,60);
 
   if(overCircle(700,300,60)){
     fill(0);
+    textSize(10);
+    rotate(-0.3);
+    text(HOWx3.toString().substring(0,5), 650,505);
+    rotate(0.3);
+    rotate(-0.73);
+    text(HOWy3.toString().substring(0,5), 380,703);
+    rotate(0.73);
+
+
   }
+  textSize(16);
   text(hF3.toString().substring(0,5), 700,300);
 
   var oR1 = data["outputsRaw"][0];
