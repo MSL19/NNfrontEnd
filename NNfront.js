@@ -199,7 +199,7 @@ fill(r2,255,255);
   text("Apple Stock Price: $"+price, 200,360);
   text("Apple Stock Volume: "+vol, 550,360);
   text("Apple Stock Interest: "+intrest, 850,360);
-  text("Prediction Correctness: "+correctPer+"%", 1120,360);
+  text("Prediction Correctness: "+correctPer.toString().substring(0,4)+"%", 1120,360);
   text("Number of runs: "+numRuns, 1370,360);
   text("**How This Site Works**", 200,390);
   textAlign(LEFT, CENTER);
