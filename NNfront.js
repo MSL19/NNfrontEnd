@@ -18,7 +18,7 @@ let ready = false;
 async function setup(){
   pixelDensity(5);
   //fullScreen();
-  createCanvas(1500,400);
+  createCanvas(1500,500);
 
   background(50);
 }
@@ -56,10 +56,10 @@ async function draw(){
 
   let HOWx1 = data["HOW"]["data"][0][0];
   let HOWx2 = data["HOW"]["data"][0][1];
-  let HOWx3 = data["HOW"]["data"][0][2];
+  let HOWx3 = data["HOW"]["data"][1][2];
   let HOWy1 = data["HOW"]["data"][1][0];
   let HOWy2 = data["HOW"]["data"][1][1];
-  let HOWy3 = data["HOW"]["data"][1][2];
+  let HOWy3 = data["HOW"]["data"][0][2];
 
   let BO1 = data["BO"]["data"][0];
   let BO2 = data["BO"]["data"][1];
@@ -169,6 +169,19 @@ fill(r2,255,255);
   var i1 = data["inputs"][0];
   var i2 = data["inputs"][1];
   var i3 = data["inputs"][2];
+  let message = "undef";
+  if(data["outputs"][0]>data["outputs"][1]){
+    message = "Stock Price will go UP";
+  }
+  else{
+    message = "Stock Price will go DOWN";
+
+  }
+  var price = data["currentPrice"];
+  var vol = data["currentVolume"];
+  var intrest = data["currentIntrest"];
+  let correctPer = data["numCorrect"]/data["totalRuns"]*100;
+  let numRuns = data["totalRuns"];
   fill(230);
   text("[INPUT NODES]", 100,50);
   text("[INPUT WEIGHTS]", 200,80);
@@ -184,7 +197,18 @@ fill(r2,255,255);
 
   text("[SIGMOID FN]", 1200,130);
   text("[OUTPUT NODES]", 1300,100);
+  text("[RESULT FROM COMPARING OUTPUTS]: \n"+"["+message+"]", 1320,200);
 
+  textSize(20);
+  text("Apple Stock Price: $"+price, 200,360);
+  text("Apple Stock Volume: "+vol, 550,360);
+  text("Apple Stock Interest: "+intrest, 850,360);
+  text("Prediction Correctness: "+correctPer+"%", 1120,360);
+  text("Number of runs: "+numRuns, 1370,360);
+  text("**How This Site Works**", 200,390);
+  textAlign(LEFT, CENTER);
+  text("This site is a graphical representation of a neural network I created to predict the price of Apple Stock.\nEach node, weight, and bias of the netowrk is colorized based on it's magnatude.\nTo see specific values, hover you mmouse over each node.  -By MAX L. for AT CS", 100,450);
+  textAlign(CENTER, CENTER);
 
   fill(r,0,i1*255);
 
