@@ -29,6 +29,7 @@ function overCircle(x,y,diameter) {
 async function draw(){
   if(ready) {
     let r = 255;
+    background(50);
 
     noStroke();
     textSize(15);
@@ -203,7 +204,7 @@ fill(r2,255,255);
   text("Number of runs: "+numRuns, 1370,360);
   text("**How This Site Works**", 200,390);
   textAlign(LEFT, CENTER);
-  text("This site is a graphical representation of a neural network I created to predict the price of Apple stock.\nEach node, weight, and bias of the netowrk is colorized based on it's value.\nTo see specific values, hover your mouse over each node.  -By MAX L. for AT CS", 100,450);
+  text("This site is a graphical representation of a neural network I created to predict the price of Apple stock.\nEach node, weight, and bias of the network is colorized based on it's value.\nTo see specific values, hover your mouse over each node.  -By MAX L. for AT CS", 100,450);
   textAlign(CENTER, CENTER);
 
   //draw and colorize all the cirlces
