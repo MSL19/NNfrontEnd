@@ -1,22 +1,16 @@
-/*var mainData;
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const url = "https://www.kdsatp.org/nnpp/"; // site that doesn’t send Access-Control-*
-fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
-.then(response => response.text())
-.then(contents => //if you have a function inside a function, you this to  
-    console.log(JSON.parse(contents))
-  //  mainData = JSON.parse(contents),
-   // console.log(mainData)
-)
-.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
-console.log(mainData);*/
-//Learning and what actually happened
-//THeme that ties it all together
-//
+/**
+ * Name: Max Lewis
+ * Project Name: Max Lewis 20% Proj Sem 1
+ * Purpose: 
+ * This is the front end of my stock price prediction neural network. Each node, weight, and bias is color coded based off of oit;s respective value. 
+ * Users can see specific values by hovering their mouse over each element.  
+ * Date: 12/15/18
+ * Collaborators: None
+ */
 let data;
 let ready = false;
 async function setup(){
-  pixelDensity(5);
+  pixelDensity(5); //makes it high res
   //fullScreen();
   createCanvas(1500,500);
 
@@ -39,7 +33,7 @@ async function draw(){
     noStroke();
     textSize(15);
     textAlign(CENTER, CENTER);
-
+//get elements from the JSON data
   let IHWx1 = data["IHW"]["data"][0][0];
   let IHWx2 = data["IHW"]["data"][0][1];
   let IHWx3 = data["IHW"]["data"][0][2];
@@ -64,6 +58,7 @@ async function draw(){
   let BO1 = data["BO"]["data"][0];
   let BO2 = data["BO"]["data"][1];
 //console.log(IHWx3);
+//set up all the rectangles and colorize them
   textSize(10);
   let r2 = 250;
   fill(r2,IHWx1*255,255);
@@ -165,7 +160,7 @@ fill(r2,255,255);
   fill(r2,255,255);
   rect(1130,145, 140, 10); //low low
   rect(1130,245, 140, 10); //low low
-
+//get more JSON data
   var i1 = data["inputs"][0];
   var i2 = data["inputs"][1];
   var i3 = data["inputs"][2];
@@ -183,6 +178,7 @@ fill(r2,255,255);
   let correctPer = data["numCorrect"]/data["totalRuns"]*100;
   let numRuns = data["totalRuns"];
   fill(230);
+  //set up all the text
   text("[INPUT NODES]", 100,50);
   text("[INPUT WEIGHTS]", 200,80);
 
@@ -210,6 +206,8 @@ fill(r2,255,255);
   text("This site is a graphical representation of a neural network I created to predict the price of Apple stock.\nEach node, weight, and bias of the netowrk is colorized based on it's value.\nTo see specific values, hover your mouse over each node.  -By MAX L. for AT CS", 100,450);
   textAlign(CENTER, CENTER);
 
+  //draw and colorize all the cirlces
+  //set up mouse hover functionality
   fill(r,0,i1*255);
 
   ellipse(100,100,60);
@@ -449,7 +447,7 @@ fill(r2,255,255);
   }
 
 }
-
+//async fuunction to get the data drom the kdsatp website
 async function getData() {
   let req = await fetch('https://kdsatp.org/nnpp/');
   let data = await req.json();
