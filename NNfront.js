@@ -61,56 +61,56 @@ async function draw(){
 //set up all the rectangles and colorize them
   textSize(10);
   let r2 = 250;
-  fill(r2,IHWx1*255,255);
+  fill(r2,Math.abs(IHWx1)*255,255);
   rect(130,95, 140, 10); //top top
   
   
-  fill(r2,IHWy1*255,255);
+  fill(r2,Math.abs(IHWy1)*255,255);
   rotate(0.55);
   rect(160,15, 180, 10); //top mid
   rotate(-0.55);
   
-  fill(r2,IHWz1*255,255);
+  fill(r2,Math.abs(IHWz1)*255,255);
   rotate(0.89);
   rect(160,-35, 235, 10); //top low
   rotate(-0.89);
   
-  fill(r2,IHWy2*255,255);
+  fill(r2,Math.abs(IHWy2)*255,255);
   rect(130,195, 140, 10); //mid mid
   
-  fill(r2,IHWx2*255,255);
+  fill(r2,Math.abs(IHWx2)*255,255);
   rotate(-0.55);
   rect(0,230, 180, 10); //mid top
   rotate(0.55);
 
-  fill(r2,IHWz2*255,255);
+  fill(r2,Math.abs(IHWz2)*255,255);
   rotate(0.55);
   rect(210,105, 180, 10); //mid low
   rotate(-0.55);
   
-  fill(r2,IHWz3*255,255);
+  fill(r2,Math.abs(IHWz3)*255,255);
   rect(130,295, 140, 10); //low low
   
-  fill(r2,IHWy2*255,255);
+  fill(r2,Math.abs(IHWy2)*255,255);
   rotate(-0.55);
   rect(-50,310, 180, 10); //low mid
   rotate(0.55);
   
-  fill(r2,IHWx3*255,255);
+  fill(r2,Math.abs(IHWx3)*255,255);
   rotate(-0.89);
   rect(-170,280, 255, 10); // low top
   rotate(0.89);
   textSize(16);
 
-  fill(r2,IHWz3*255,255);
+  fill(r2,Math.abs(IHWz3)*255,255);
   rect(130,295, 140, 10); //low low
   
 
-  fill(r2,BH3*255,255);
+  fill(r2,Math.abs(BH3)*255,255);
   rect(330,295, 140, 10); //low low
-fill(r2,BH2*255,255);
+fill(r2,Math.abs(BH2)*255,255);
   rect(330,195, 140, 10); //low low
-    fill(r2,BH1*255,255);
+    fill(r2,Math.abs(BH1)*255,255);
   rect(330,95, 140, 10); //low low
     
 
@@ -122,39 +122,39 @@ fill(r2,255,255);
   rect(530,95, 140, 10); //low low
   
   rotate(0.3);
-  fill(r2,HOWx1*255,255);
+  fill(r2,Math.abs(HOWx1)*255,255);
   rect(720,-125, 170, 10); //low low
   rotate(-0.3);
 
   rotate(0.73);
-  fill(r2,HOWy1*255,255);
+  fill(r2,Math.abs(HOWy1)*255,255);
   rect(610,-405, 220, 10); //low low
   rotate(-0.73);
 
   rotate(-0.3);
-  fill(r2,HOWx2*255,255);
+  fill(r2,Math.abs(HOWx2)*255,255);
   rect(600,400, 200, 10); //low low
   rotate(0.3);
 
   rotate(0.3);
-  fill(r2,HOWy2*255,255);
+  fill(r2,Math.abs(HOWy2)*255,255);
   rect(720,-20, 200, 10); //low low
   rotate(-0.3);
 
   rotate(-0.3);
-  fill(r2,HOWx3*255,255);
+  fill(r2,Math.abs(HOWx3)*255,255);
   rect(600,500, 170, 10); //low low
   rotate(0.3);
 
   rotate(-0.73);
-  fill(r2,HOWy3*255,255);
+  fill(r2,Math.abs(HOWy3)*255,255);
   rect(340,697, 220, 10); //low low
   rotate(0.73);
 
-  fill(r2,BO1*255,255);
+  fill(r2,Math.abs(BO1)*255,255);
   rect(930,145, 140, 10); //low low
 
-  fill(r2,BO2*255,255);
+  fill(r2,Math.abs(BO2)*255,255);
   rect(930,245, 140, 10); //low low
 
   fill(r2,255,255);
@@ -208,7 +208,7 @@ fill(r2,255,255);
 
   //draw and colorize all the cirlces
   //set up mouse hover functionality
-  fill(r,0,i1*255);
+  fill(r,0,Math.abs(i1)*255);
 
   ellipse(100,100,60);
   if(overCircle(100,100,60)){ // mouse over top input node
@@ -227,7 +227,7 @@ fill(r2,255,255);
   }
   textSize(16);
   text(i1.toString().substring(0,5), 100,100);
-  fill(r,0,i2*255);
+  fill(r,0,Math.abs(i2)*255);
   ellipse(100,200,60);
 
   if(overCircle(100,200,60)){ //mouse over mid node
@@ -243,7 +243,7 @@ fill(r2,255,255);
   }
   textSize(16);
   text(i2.toString().substring(0,5), 100,200);
-  fill(r,0,i3*255);
+  fill(r,0,Math.abs(i3)*255);
   ellipse(100,300,60);
 
   if(overCircle(100,300,60)){ //if mouse over low node
