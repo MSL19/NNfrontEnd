@@ -181,6 +181,10 @@ fill(r2,255,255);
   fill(230);
   //set up all the text
   text("[INPUT NODES]", 100,50);
+  text("[PRICE]", 40,130);
+  text("[VOL]", 40,230);
+  text("[TRENDS]", 40,330);
+
   text("[INPUT WEIGHTS]", 200,80);
 
   text("[HIDDEN NODES]", 300,50);
