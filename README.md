@@ -8,11 +8,16 @@
  * Date: 12/15/18
  * Collaborators: None
  */
- ** EACH FILE'S PURPOSE**
+ 
+ 
+**Each File's Purpose**
  index.html - basic html file that holds this whole porject together
- NNfront.js - js file contining all the JS code to control the GUI
+ NNfront.js - js file contining all the JS code to control the GUI; it pulls JSON data from https://www.kdsatp.org/nnpp/ and converts it into a somewhate visually apealing GUI
 p5.js - p5 Javascript library for graphics
 testNode.js - depreciated old code
-
- **HOW TO RUN**
- Simply open the index.html file in any browser (crome prefered)
+ 
+ 
+**HOW TO RUN**
+Simply open the index.html file in any browser (crome prefered)
+Make sure to note delete any of the dependencies files (p5.js, index.js...etc)
+p5.js came from: https://p5js.org/
