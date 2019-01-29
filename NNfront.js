@@ -10,7 +10,7 @@
 let data;
 let ready = false;
 async function setup(){
-  pixelDensity(5); //makes it high res
+  pixelDensity(4.7); //makes it high res
   //fullScreen();
   createCanvas(1500,500);
 
